@@ -1,0 +1,181 @@
+What is DevOps?
+
+1) DevOps is the combination of two words, one is Development and other is Operations. It is a culture to promote the development and operation process collectively.
+2)DevOps promotes collaboration between Development and Operations teams to deploy code to production faster in an automated & repeatable way.
+
+DevOps Tool->Git, Ansible, Docker, Puppet, Jenkins, Chef, Nagios, and Kubernetes.
+
+Life Cycle of DevOps
+1)Continuous Development
+2)Continuous Integration
+3)Continuous Testing
+4)Continuous Deployment
+5)Continuous Monitoring
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+JENKINS
+
+Jenkins is a popular open-source automation tool that facilitates continuous integration and continuous delivery (CI/CD).
+
+It is written in JAVA programming language.
+
+
+CI AND CD-> Continuous Integration and Continuous Deployment are key practices in DevOps that aim to improve the software development process.
+
+Continuous Integration ->Continuous Integration is the practice of automatically integrating code changes from multiple contributors into a single software project. It involves:
+
+1. Code Commit: Developers regularly commit their code changes to a version control system like Git.
+  
+2. Build: Automatically compile and build application after each commit.
+  
+3. Test: Automated tests are run to detect bugs, performance issues, or security vulnerabilities.
+
+ Benefits:
+- Quick identification of issues
+- Faster development cycle
+- Less time spent debugging
+- Greater code integrity
+
+ Tools:
+- Jenkins
+- Travis CI
+- GitLab CI/CD
+
+
+
+
+
+
+
+Continuous Deployment/Delivery ->Continuous Deployment takes the code changes that have passed through the CI process and deploys them automatically into the production environment. Steps include:
+
+1. Automatic Release: Code that passes the CI stage is automatically deployed.
+
+2. Configuration Management: Infrastructure is programmatically managed using tools to ensure that environments are consistent.
+
+3. Monitoring: The application and infrastructure are continuously monitored for performance and issues.
+
+ Benefits:
+- Faster time to market
+- Reduced risk
+- Higher quality software
+- Improved customer satisfaction
+
+ Tools:
+- Kubernetes
+- Docker
+- Ansible
+
+
+
+ARCHITECTURE
+
+Jenkins follows Master-Slave architecture to manage distributed builds. In this architecture, slave and master communicate through TCP/IP protocol.
+
+Jenkins architecture has two components:
+
+1)Jenkins Master/Server-> Jenkins Master will distribute it workload to slaves.
+
+
+      
+2)Jenkins Slave/Node/Build Server->Jenkins slave is used to execute the build jobs dispatched by the master.
+
+
+
+JENKINS PIPELINE
+
+In Jenkins, a pipeline is a collection of events or jobs which are interlinked with one another in a sequence.
+
+
+
+JENKINS FILE
+
+Jenkins Pipeline can be defined by a text file called Jenkins File.
+
+Two types of syntax are used for defining your Jenkins File.
+
+1)Declarative ->Declarative Pipeline uses a simpler, more structured syntax. It is designed to make it easier to read and write.
+
+Example-> 
+
+       pipeline {
+    agent any
+    stages {
+        stage('Compile')
+        {
+            steps {
+                echo "Complied Successfully!"
+            }
+        }
+        stage('JUnit')
+        {
+            steps {
+                echo "Junit passed Successfully!”
+            }
+        }
+        stage('Quality-Gate')
+        {
+            steps {
+                echo "Sonar Quality Gate passed Successfully!"
+            }
+        }
+        stage('Deploy')
+        {
+            steps {
+                echo "Pass"
+            }
+        }
+        
+    }
+    post {
+        always {
+            echo "this will always run!"
+        }
+        success {
+            echo "this will run only if successful!"
+        }
+        Failure {
+            echo "this will run only if failed!"
+        }
+        unstable {
+            echo "this will run only if the run was marked as unstable."
+        }
+        changed {
+            echo "this will run only if the state of the pipeline has changed."
+            echo "for example, if the pipeline was previously failing but is now successful."
+        }
+    }
+}
+
+2)Scripted->Scripting Pipeline uses a more flexible Groovy -based scripting language. It allows you to write complex logic and conditional statements.
+
+
+
+
+Example ->
+
+node {
+    stage('Build') {
+        echo 'Building...'
+         sh 'make.'
+    }
+     stage('Build') {
+        echo 'Testing...'
+        sh 'make test.'
+    }
+     stage('Deploy') {
+        echo 'Deploying...'
+        sh 'make deploy.'
+    }
+}
