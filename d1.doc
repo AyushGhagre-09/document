@@ -1,0 +1,120 @@
+GIT AND GIT HUB
+
+
+GIT->Git is version control System tools that help you track the history of code.
+
+Why Git?
+
+1)Distributed Version Control-> Git is distributed version control system.This means every developer has a full copy of respository including its history.
+
+2)Branching and Merging -> Git makes branching and merging operation easy. Developer can work on separate branches ,making changes without affecting main
+                           codebase. when the work is completed branches can be merged back into the main branch.
+
+3)History and Tracking Changes-> Git keeps a complete history of changes made to the codebase.
+
+4)Open Source-> Git is Open source software  which means it is free to use and can be customized or extended according to specific needs. 
+
+         
+
+GIT COMMANDS
+
+
+1)version -> It Will tell the version of git.
+
+ git -- version
+
+2)clone -> It is used to create a copy of a remote repository on local machine
+ 
+ git clone <repository-url>
+
+3)status -> display the state of the code
+
+ git status
+
+  different type of status:-
+
+  untracked->new files that git doesn't yet track
+
+  modified-> changed
+
+  unmodified-> unchanged
+
+  staged -> file is ready to commit
+
+4) Add ->  adds new or changed files in your working directory to the git staging area
+
+          git add <file-name>
+             or
+          git add .(to add all file)
+
+5)commit-> it is record of change.
+
+        git commit -m "some message"
+
+
+6)push -> git push origin <branch-name> (upload local repo. content to remote repo.)
+
+
+7)pull-> git pull origin <branch-name>(upload remote repo. content to local repo.)
+
+
+8) To make a git repo ->git init
+
+
+
+
+
+BRANCHES->Branches allow you to work on different parts of a project without impacting the main branch. When the work is complete, a branch can be merged         
+           with main project
+
+9) To check branch ->git branch
+
+10) to rename a branch -> git branch -m  <new-branch-name>
+
+11)to navigate branch-> git checkout <branch-name>
+
+
+12)to delete branch -> git branch -d <branch-name>
+
+Note:- if we are using current branch so we can't delete that
+
+13) to create new branch and navigate to new branch -> git branch -b <branch-name>
+
+
+14)difference in branch ->git diff <branch-name>
+ 
+Merging code -> it is used integrate changes  from one branch   to another branch .
+
+15) merge the code any branch -> git merge <branch-name>
+
+
+
+
+16) git remote add origin->It is used to add  remote repository named "origin" to your local git repository.
+  
+git remote add origin <some-link>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ GITHUB
+
+
+GitHub->Website that allow developer to store and manage their code using git
+
+Fork in GitHub-> it is used to the copy repository in our  new repository.
+
+Git Pull Request->  A pull request is way to propose changes to code repository on platform like Github.
+
+README.md file-> README file is document that provides the inforamation about project to other developers and users.
+
+.gitignore file ->  .gitignore file is used int git version control to specify which files and directories should you ignored anf not tracked by git
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+GIT WORKFLOW
+
+    GitHub Repository->clone ->changes-> add->commit->push
+      
